@@ -18,7 +18,7 @@ const io = new Server(server, {
 app.use(cors());
 app.use(express.json());
 
-const DATA_PATH = path.join(__dirname, 'data.json');
+const DATA_PATH = path.join('/tmp', 'data.json');
 
 function getCards() {
   try {
