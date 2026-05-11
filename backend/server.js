@@ -19,6 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 const DATA_PATH = path.join('/tmp', 'data.json');
+const PORT = process.env.PORT || 3000;
 
 function getCards() {
   try {
@@ -36,6 +37,10 @@ function saveCards(cards) {
     console.error('Save error:', e);
   }
 }
+
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
 
 app.get('/cards', (req, res) => {
   const cards = getCards();
@@ -60,8 +65,6 @@ io.on('connection', socket => {
     console.log('User disconnected');
   });
 });
-
-const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
   console.log('Backend started on port', PORT);
