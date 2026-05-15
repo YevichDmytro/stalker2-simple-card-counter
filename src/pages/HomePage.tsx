@@ -1,11 +1,10 @@
-import { useAuth } from '../context/AuthContext';
 import { useCards } from '../hooks/useCards';
 import Card from '../components/Card';
+import Header from '../components/Header/Header';
 
 const TOTAL = 48;
 
 export default function HomePage() {
-  const { user, logout } = useAuth();
   const {
     inputVals,
     total,
@@ -19,19 +18,7 @@ export default function HomePage() {
 
   return (
     <div className='home-page'>
-      <header className='home-header'>
-        <div className='home-header-left'>
-          <span className='home-title'>Card counter</span>
-          <span className='home-total'>Total: {total}</span>
-        </div>
-        <div className='home-header-right'>
-          <span className='home-user'>{user?.email}</span>
-          <button className='logout-btn' onClick={() => void logout()}>
-            Logout
-          </button>
-        </div>
-      </header>
-
+      <Header total={total} />
       <main className='cards-grid'>
         {Array.from({ length: TOTAL }, (_, i) => (
           <Card
