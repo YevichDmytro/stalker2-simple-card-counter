@@ -23,7 +23,9 @@ export default function Card({
 }: CardProps) {
   return (
     <div className='card'>
-      <span className='card-number'>{index + 1}</span>
+      <div className='card-number-wrapper'>
+        <span className='card-number'>{index + 1}</span>
+      </div>
       <div className='card-controls'>
         <button
           className='card-btn card-btn--dec'
