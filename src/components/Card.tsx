@@ -23,6 +23,9 @@ export default function Card({
 }: CardProps) {
   return (
     <div className='card'>
+      <div className='card-count-wrapper'>
+        <span className='card-count'>{inputVal}</span>
+      </div>
       <div className='card-number-wrapper'>
         <span className='card-number'>{index + 1}</span>
       </div>
