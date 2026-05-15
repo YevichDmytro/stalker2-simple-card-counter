@@ -36,7 +36,7 @@ export default function AuthPage() {
   return (
     <div className='auth-page'>
       <div className='auth-card'>
-        <h1 className='auth-title'>card counter</h1>
+        <h1 className='auth-title'>Card counter</h1>
         <p className='auth-sub'>Sign in</p>
 
         <form onSubmit={handleSubmit} className='auth-form'>

@@ -21,13 +21,13 @@ export default function HomePage() {
     <div className='home-page'>
       <header className='home-header'>
         <div className='home-header-left'>
-          <span className='home-title'>card counter</span>
-          <span className='home-total'>всього: {total}</span>
+          <span className='home-title'>Card counter</span>
+          <span className='home-total'>Total: {total}</span>
         </div>
         <div className='home-header-right'>
           <span className='home-user'>{user?.email}</span>
           <button className='logout-btn' onClick={() => void logout()}>
-            вийти
+            Logout
           </button>
         </div>
       </header>
